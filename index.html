@@ -4,257 +4,126 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RawrHub</title>
-  <meta name="theme-color" content="#0b0912">
+  <title>Pupii | Support My Music</title>
   <style>
-    :root {
-      color-scheme: dark;
-      --bg: #0b0912;
-      --panel: #15111f;
-      --purple: #a855f7;
-      --text: #f7f2ff;
-      --muted: #aaa0bd;
+    * {
+      box-sizing: border-box;
     }
-
-    * { box-sizing: border-box; }
 
     body {
       margin: 0;
       min-height: 100vh;
-      background:
-        radial-gradient(ellipse at 50% -20%, #49216b 0%, transparent 55%),
-        var(--bg);
-      color: var(--text);
-      font-family: system-ui, sans-serif;
-    }
-
-    a { color: inherit; text-decoration: none; }
-
-    header {
-      max-width: 1100px;
-      margin: auto;
-      padding: 22px 24px;
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      border-bottom: 1px solid #292033;
+      justify-content: center;
+      padding: 24px;
+      background: #111116;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      text-align: center;
     }
 
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-size: 1.45rem;
-      font-weight: 850;
-      letter-spacing: -1px;
+    .shop {
+      width: 100%;
+      max-width: 440px;
     }
 
     .logo {
-      width: 42px;
-      height: 42px;
-      display: grid;
-      place-items: center;
-      border-radius: 14px;
-      background: linear-gradient(135deg, #c084fc, #7e22ce);
-      box-shadow: 0 0 28px #a855f744;
-    }
-
-    .credit { color: var(--muted); font-size: .85rem; }
-
-    main {
-      width: min(100% - 40px, 1000px);
-      margin: auto;
-    }
-
-    .hero {
-      text-align: center;
-      padding: 100px 0 85px;
-      animation: appear .7s ease both;
-    }
-
-    .eyebrow {
-      display: inline-block;
-      border: 1px solid #62378a;
-      background: #241331;
-      color: #d8b4fe;
-      border-radius: 100px;
-      padding: 8px 14px;
-      font-size: .8rem;
-      font-weight: 750;
-      letter-spacing: 2px;
+      font-size: 58px;
+      margin-bottom: 8px;
     }
 
     h1 {
-      margin: 25px 0 14px;
-      font-size: clamp(2.6rem, 8vw, 5.5rem);
-      letter-spacing: -4px;
-      line-height: 1.05;
+      font-size: 42px;
+      margin: 10px 0;
+      letter-spacing: 5px;
     }
 
-    h1 span {
-      color: #c084fc;
-      text-shadow: 0 0 45px #a855f744;
+    .subtitle {
+      color: #b8b5c6;
+      line-height: 1.6;
+      margin-bottom: 30px;
     }
 
-    .intro {
-      color: var(--muted);
-      max-width: 520px;
-      margin: 0 auto;
-      line-height: 1.8;
-    }
-
-    .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      margin-top: 28px;
-      padding: 13px 20px;
-      border-radius: 12px;
-      background: var(--purple);
-      color: white;
-      font-weight: 750;
-      transition: transform .2s, background .2s;
-    }
-
-    .button:hover {
-      transform: translateY(-3px);
-      background: #9333ea;
-    }
-
-    .section-heading {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 20px;
-    }
-
-    h2 { font-size: 1.5rem; }
-
-    .count { color: var(--muted); font-size: .85rem; }
-
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 18px;
-      padding-bottom: 80px;
-    }
-
-    .project {
-      background: linear-gradient(145deg, #1b1527, #110e18);
-      border: 1px solid #30243d;
-      border-radius: 20px;
+    .donation {
+      background: #1d1d26;
+      border: 1px solid #393943;
+      border-radius: 18px;
       padding: 24px;
-      transition: transform .2s, border-color .2s;
+      margin: 16px 0;
     }
 
-    .project:hover {
-      transform: translateY(-5px);
-      border-color: #a855f7;
+    .donation h2 {
+      font-size: 32px;
+      margin: 0 0 10px;
     }
 
-    .project-icon {
-      width: 54px;
-      height: 54px;
-      display: grid;
-      place-items: center;
-      border-radius: 16px;
-      background: #302044;
-      font-size: 1.8rem;
-      margin-bottom: 20px;
+    .donation p {
+      color: #c1bfce;
     }
 
-    .project h3 { margin: 0 0 9px; font-size: 1.25rem; }
-
-    .project p {
-      color: var(--muted);
-      line-height: 1.7;
-      margin: 0 0 20px;
+    button {
+      width: 100%;
+      border: 0;
+      border-radius: 10px;
+      padding: 15px;
+      background: #a88aff;
+      color: #171020;
+      font-size: 17px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: transform 0.15s, background 0.15s;
     }
 
-    .tag {
-      display: inline-block;
-      padding: 6px 10px;
-      border-radius: 8px;
-      background: #261832;
-      color: #d8b4fe;
-      font-size: .75rem;
-      margin-right: 5px;
+    button:hover {
+      background: #c0adff;
+      transform: translateY(-2px);
     }
 
-    .project-link {
-      display: inline-block;
-      margin-top: 20px;
-      color: #c084fc;
-      font-weight: 700;
-    }
-
-    .project-link:hover { color: white; }
-
-    footer {
-      border-top: 1px solid #292033;
-      padding: 25px 20px;
-      color: var(--muted);
-      text-align: center;
-      font-size: .85rem;
-    }
-
-    @keyframes appear {
-      from { opacity: 0; transform: translateY(15px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        animation-duration: .01ms !important;
-        transition-duration: .01ms !important;
-      }
+    .note {
+      font-size: 12px;
+      color: #898795;
+      line-height: 1.6;
+      margin-top: 24px;
     }
   </style>
 </head>
 <body>
-  <header>
-    <a class="brand" href="./" aria-label="RawrHub home">
-      <span class="logo">🐾</span>
-      <span>RawrHub</span>
-    </a>
-    <span class="credit">Built by rawrguy</span>
-  </header>
+  <main class="shop">
+    <div class="logo">🎸</div>
+    <h1>PUPII</h1>
+    <p class="subtitle">
+      indie rock made with love.<br>
+      Thanks for supporting my music 🖤
+    </p>
 
-  <main>
-    <section class="hero">
-      <span class="eyebrow">WELCOME TO RAWRHUB</span>
-      <h1>Welcome, <span>To RawrHub</span></h1>
-      <p class="intro">
-        Cool projects, useful libraries, and whatever else I'm building.
-        Take a look around.
-      </p>
-      <a class="button" href="#projects">Explore projects ↓</a>
+    <section class="donation">
+      <h2>$5</h2>
+      <p>A little support for my music ✨</p>
+      <button onclick="donate(5)">Donate $5</button>
     </section>
 
-    <section id="projects">
-      <div class="section-heading">
-        <h2>Featured projects</h2>
-        <span class="count">01 project</span>
-      </div>
-
-      <div class="projects">
-        <article class="project">
-          <div class="project-icon">🌘</div>
-          <h3>EclipseUI</h3>
-          <p>
-            A dark-themed Roblox UI library with windows, tabs,
-            sections, buttons, toggles, sliders, and more.
-          </p>
-          <span class="tag">Roblox</span>
-          <span class="tag">Lua</span>
-          <a href="eclipseui.html">📖 Read Documentation</a>
-        </article>
-      </div>
+    <section class="donation">
+      <h2>$10</h2>
+      <p>Extra love for indie rock 💜</p>
+      <button onclick="donate(10)">Donate $10</button>
     </section>
+
+    <p class="note">
+      Made with 🖤 by Pupii<br>
+      Independent music, supported by you.
+    </p>
   </main>
 
-  <footer>
-    RawrHub · Built by rawrguy
-  </footer>
+  <script>
+    function donate(amount) {
+      alert(
+        "Thanks for supporting Pupii! 🎸\n\n" +
+        "You selected a $" + amount +
+        " donation.\n\n" +
+        "Online payments aren't set up yet."
+      );
+    }
+  </script>
 </body>
 </html>
