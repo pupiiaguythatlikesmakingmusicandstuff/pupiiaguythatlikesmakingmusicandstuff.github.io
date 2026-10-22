@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#111116">
-  <meta name="description" content="Listen to and download Pupii's free indie rock beat.">
+  <meta name="description" content="Pupii's indie rock music, free beat downloads, and favorite artists.">
 
-  <title>Pupii | Free Indie Rock Beat</title>
+  <title>Pupii | Indie Rock</title>
 
   <style>
     * {
@@ -73,7 +73,7 @@
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 25px;
+      gap: 22px;
       padding: 18px 0 30px;
       color: #c1bfce;
       font-size: 14px;
@@ -120,7 +120,6 @@
       text-align: center;
       font-size: 22px;
       margin: 18px 0 6px;
-      color: #fff;
     }
 
     .beat-description {
@@ -132,7 +131,6 @@
     audio {
       width: 100%;
       margin: 10px 0 18px;
-      accent-color: #a88aff;
     }
 
     .download-button {
@@ -162,23 +160,47 @@
       margin-top: 14px;
     }
 
-    .socials {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 18px;
+    .artist-card {
+      background: #272631;
+      border: 1px solid #40394b;
+      border-radius: 14px;
+      padding: 20px;
+      margin-top: 16px;
     }
 
+    .artist-name {
+      font-size: 24px;
+      margin: 0 0 6px;
+      color: #fff;
+    }
+
+    .artist-username {
+      font-size: 13px;
+      color: #c0adff;
+      margin: 0 0 12px;
+    }
+
+    .artist-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .artist-links a,
     .socials a {
+      display: inline-block;
       padding: 12px 16px;
       border-radius: 10px;
       border: 1px solid #494054;
       color: #c0adff;
       font-size: 14px;
+      transition: background 0.2s;
     }
 
+    .artist-links a:hover,
     .socials a:hover {
-      background: #292432;
+      background: #352c43;
     }
 
     footer {
@@ -199,7 +221,7 @@
       }
 
       nav {
-        gap: 17px;
+        gap: 16px;
       }
     }
   </style>
@@ -224,7 +246,8 @@
     <nav aria-label="Main navigation">
       <a href="#beat">Free Beat</a>
       <a href="#about">About</a>
-      <a href="#socials">Find Me</a>
+      <a href="#bandlab">BandLab</a>
+      <a href="#favorites">Favorite Artists</a>
     </nav>
 
     <section id="beat">
@@ -252,7 +275,6 @@
           type="audio/wav"
         >
         Your browser does not support audio playback.
-        You can still try the download button below.
       </audio>
 
       <a
@@ -279,24 +301,60 @@
       </p>
     </section>
 
-    
-<section id="socials">
-  <h2>🌐 BandLab</h2>
+    <section id="bandlab">
+      <h2>🎵 BandLab</h2>
 
-  <p>
-    This is where I make my music.
-  </p>
+      <p>This is where I make my music.</p>
 
-  <div class="socials">
-    <a
-      href="https://www.bandlab.com/"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      🎧 BandLab
-    </a>
-  </div>
-</section>
+      <div class="socials">
+        <a
+          href="https://www.bandlab.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          🎧 BandLab
+        </a>
+      </div>
+    </section>
+
+    <section id="favorites">
+      <h2>💜 Favorite Artists</h2>
+
+      <p>
+        Artists whose music I love and want to share.
+      </p>
+
+      <div class="artist-card">
+        <h3 class="artist-name">bunii</h3>
+
+        <p class="artist-username">
+          Username: ilove6yari
+        </p>
+
+        <p>
+          One of my favorite artists. Go check out
+          their music! 🖤
+        </p>
+
+        <div class="artist-links">
+          <a
+            href="https://open.spotify.com/search/bunii"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            ♫ Spotify
+          </a>
+
+          <a
+            href="https://www.youtube.com/results?search_query=bunii+ilove6yari"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            ▶ YouTube
+          </a>
+        </div>
+      </div>
+    </section>
 
     <footer>
       Made with 🖤 by Pupii<br>
