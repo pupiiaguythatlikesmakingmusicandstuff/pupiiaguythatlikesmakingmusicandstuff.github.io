@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#111116">
-  <meta name="description" content="Pupii's indie rock music, free beat downloads, and favorite artists.">
+  <meta name="description" content="Pupii's indie rock music and free beat downloads.">
 
   <title>Pupii | Indie Rock</title>
 
@@ -73,7 +73,7 @@
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 22px;
+      gap: 20px;
       padding: 18px 0 30px;
       color: #c1bfce;
       font-size: 14px;
@@ -105,13 +105,22 @@
       display: grid;
       place-items: center;
       width: 100%;
-      aspect-ratio: 1 / 1;
       max-width: 280px;
+      aspect-ratio: 1 / 1;
       margin: 20px auto;
       border-radius: 16px;
       background:
-        radial-gradient(circle at 70% 25%, #7755a4 0, transparent 35%),
-        linear-gradient(145deg, #30233f, #17151f 65%, #49345f);
+        radial-gradient(
+          circle at 70% 25%,
+          #7755a4 0,
+          transparent 35%
+        ),
+        linear-gradient(
+          145deg,
+          #30233f,
+          #17151f 65%,
+          #49345f
+        );
       border: 1px solid #514064;
       font-size: 90px;
     }
@@ -129,22 +138,21 @@
     }
 
     audio {
+      display: block;
       width: 100%;
-      margin: 10px 0 18px;
+      margin: 15px 0 18px;
     }
 
     .download-button {
       display: block;
       width: 100%;
       padding: 16px;
-      border: none;
       border-radius: 10px;
       background: #a88aff;
       color: #171020;
       text-align: center;
       font-size: 17px;
       font-weight: bold;
-      cursor: pointer;
       transition: background 0.2s, transform 0.2s;
     }
 
@@ -168,6 +176,17 @@
       margin-top: 16px;
     }
 
+    .artist-art {
+      display: grid;
+      place-items: center;
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #a88aff, #49345f);
+      font-size: 38px;
+      margin-bottom: 16px;
+    }
+
     .artist-name {
       font-size: 24px;
       margin: 0 0 6px;
@@ -180,7 +199,8 @@
       margin: 0 0 12px;
     }
 
-    .artist-links {
+    .artist-links,
+    .socials {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
@@ -221,7 +241,7 @@
       }
 
       nav {
-        gap: 16px;
+        gap: 15px;
       }
     }
   </style>
@@ -325,6 +345,10 @@
       </p>
 
       <div class="artist-card">
+        <div class="artist-art" aria-hidden="true">
+          🎶
+        </div>
+
         <h3 class="artist-name">bunii</h3>
 
         <p class="artist-username">
@@ -333,24 +357,24 @@
 
         <p>
           One of my favorite artists. Go check out
-          their music! 🖤
+          his music! 🖤
         </p>
 
         <div class="artist-links">
           <a
-            href="https://open.spotify.com/search/bunii"
+            href="https://open.spotify.com/artist/6mx3Y8XNLPaS2pjJbQFq3W"
             target="_blank"
             rel="noopener noreferrer"
           >
-            ♫ Spotify
+            ♫ bunii on Spotify
           </a>
 
           <a
-            href="https://www.youtube.com/results?search_query=bunii+ilove6yari"
+            href="https://www.youtube.com/@ilove6yari"
             target="_blank"
             rel="noopener noreferrer"
           >
-            ▶ YouTube
+            ▶ bunii on YouTube
           </a>
         </div>
       </div>
