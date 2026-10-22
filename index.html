@@ -1,10 +1,13 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#111116">
+  <meta name="description" content="Support Pupii's independent indie-rock music. Thanks for the love!">
+
   <title>Pupii | Support My Music</title>
+
   <style>
     * {
       box-sizing: border-box;
@@ -51,6 +54,12 @@
       border-radius: 18px;
       padding: 24px;
       margin: 16px 0;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+
+    .donation:hover {
+      transform: translateY(-3px);
+      border-color: #a88aff;
     }
 
     .donation h2 {
@@ -80,18 +89,30 @@
       transform: translateY(-2px);
     }
 
+    button:focus-visible {
+      outline: 3px solid white;
+      outline-offset: 3px;
+    }
+
     .note {
       font-size: 12px;
       color: #898795;
-      line-height: 1.6;
+      line-height: 1.8;
       margin-top: 24px;
+    }
+
+    a {
+      color: #c0adff;
     }
   </style>
 </head>
+
 <body>
   <main class="shop">
-    <div class="logo">🎸</div>
+    <div class="logo" aria-hidden="true">🎸</div>
+
     <h1>PUPII</h1>
+
     <p class="subtitle">
       indie rock made with love.<br>
       Thanks for supporting my music 🖤
@@ -100,13 +121,17 @@
     <section class="donation">
       <h2>$5</h2>
       <p>A little support for my music ✨</p>
-      <button onclick="donate(5)">Donate $5</button>
+      <button type="button" onclick="donate(5)">
+        Donate $5
+      </button>
     </section>
 
     <section class="donation">
       <h2>$10</h2>
       <p>Extra love for indie rock 💜</p>
-      <button onclick="donate(10)">Donate $10</button>
+      <button type="button" onclick="donate(10)">
+        Donate $10
+      </button>
     </section>
 
     <p class="note">
@@ -116,12 +141,15 @@
   </main>
 
   <script>
+    const KOFI_URL = "https://ko-fi.com/pupiimusicartist";
+
     function donate(amount) {
-      alert(
-        "Thanks for supporting Pupii! 🎸\n\n" +
-        "You selected a $" + amount +
-        " donation.\n\n" +
-        "Online payments aren't set up yet."
+      // Opens your Ko-fi page in a new tab.
+      // The supporter completes the payment on Ko-fi.
+      window.open(
+        KOFI_URL,
+        "_blank",
+        "noopener,noreferrer"
       );
     }
   </script>
