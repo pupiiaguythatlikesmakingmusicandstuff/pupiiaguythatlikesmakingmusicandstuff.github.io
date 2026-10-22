@@ -4,154 +4,301 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#111116">
-  <meta name="description" content="Support Pupii's independent indie-rock music. Thanks for the love!">
+  <meta name="description" content="Listen to and download Pupii's free indie rock beat.">
 
-  <title>Pupii | Support My Music</title>
+  <title>Pupii | Free Indie Rock Beat</title>
 
   <style>
     * {
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 24px;
       background: #111116;
       color: #fff;
       font-family: Arial, sans-serif;
-      text-align: center;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
     }
 
     .shop {
       width: 100%;
-      max-width: 440px;
+      max-width: 700px;
+      margin: auto;
+      padding: 30px 22px;
+    }
+
+    header {
+      text-align: center;
+      padding: 45px 0 30px;
     }
 
     .logo {
-      font-size: 58px;
-      margin-bottom: 8px;
+      font-size: 64px;
+      margin-bottom: 12px;
     }
 
     h1 {
-      font-size: 42px;
-      margin: 10px 0;
-      letter-spacing: 5px;
+      font-size: clamp(42px, 10vw, 64px);
+      letter-spacing: 8px;
+      margin: 0;
     }
 
     .subtitle {
       color: #b8b5c6;
-      line-height: 1.6;
-      margin-bottom: 30px;
+      line-height: 1.8;
+      margin: 18px 0 22px;
     }
 
-    .donation {
+    .tag {
+      display: inline-block;
+      border: 1px solid #494054;
+      border-radius: 30px;
+      padding: 9px 15px;
+      color: #c0adff;
+      font-size: 12px;
+      letter-spacing: 1px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 25px;
+      padding: 18px 0 30px;
+      color: #c1bfce;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      color: #c0adff;
+    }
+
+    section {
       background: #1d1d26;
       border: 1px solid #393943;
       border-radius: 18px;
-      padding: 24px;
-      margin: 16px 0;
-      transition: transform 0.2s, border-color 0.2s;
+      padding: 26px;
+      margin: 18px 0;
     }
 
-    .donation:hover {
-      transform: translateY(-3px);
-      border-color: #a88aff;
+    h2 {
+      font-size: 24px;
+      margin: 0 0 14px;
     }
 
-    .donation h2 {
-      font-size: 32px;
-      margin: 0 0 10px;
-    }
-
-    .donation p {
+    p {
       color: #c1bfce;
+      line-height: 1.8;
     }
 
-    button {
+    .beat-art {
+      display: grid;
+      place-items: center;
       width: 100%;
-      border: 0;
+      aspect-ratio: 1 / 1;
+      max-width: 280px;
+      margin: 20px auto;
+      border-radius: 16px;
+      background:
+        radial-gradient(circle at 70% 25%, #7755a4 0, transparent 35%),
+        linear-gradient(145deg, #30233f, #17151f 65%, #49345f);
+      border: 1px solid #514064;
+      font-size: 90px;
+    }
+
+    .beat-title {
+      text-align: center;
+      font-size: 22px;
+      margin: 18px 0 6px;
+      color: #fff;
+    }
+
+    .beat-description {
+      text-align: center;
+      margin: 0 0 20px;
+      font-size: 14px;
+    }
+
+    audio {
+      width: 100%;
+      margin: 10px 0 18px;
+      accent-color: #a88aff;
+    }
+
+    .download-button {
+      display: block;
+      width: 100%;
+      padding: 16px;
+      border: none;
       border-radius: 10px;
-      padding: 15px;
       background: #a88aff;
       color: #171020;
+      text-align: center;
       font-size: 17px;
       font-weight: bold;
       cursor: pointer;
-      transition: transform 0.15s, background 0.15s;
+      transition: background 0.2s, transform 0.2s;
     }
 
-    button:hover {
+    .download-button:hover {
       background: #c0adff;
       transform: translateY(-2px);
     }
 
-    button:focus-visible {
-      outline: 3px solid white;
-      outline-offset: 3px;
-    }
-
-    .note {
-      font-size: 12px;
-      color: #898795;
-      line-height: 1.8;
-      margin-top: 24px;
-    }
-
-    a {
+    .free-label {
+      text-align: center;
       color: #c0adff;
+      font-size: 13px;
+      margin-top: 14px;
+    }
+
+    .socials {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .socials a {
+      padding: 12px 16px;
+      border-radius: 10px;
+      border: 1px solid #494054;
+      color: #c0adff;
+      font-size: 14px;
+    }
+
+    .socials a:hover {
+      background: #292432;
+    }
+
+    footer {
+      text-align: center;
+      color: #898795;
+      font-size: 12px;
+      line-height: 1.8;
+      padding: 25px 0 10px;
+    }
+
+    @media (max-width: 480px) {
+      .shop {
+        padding: 16px;
+      }
+
+      section {
+        padding: 20px;
+      }
+
+      nav {
+        gap: 17px;
+      }
     }
   </style>
 </head>
 
 <body>
   <main class="shop">
-    <div class="logo" aria-hidden="true">🎸</div>
 
-    <h1>PUPII</h1>
+    <header id="home">
+      <div class="logo" aria-hidden="true">🎸</div>
 
-    <p class="subtitle">
-      indie rock made with love.<br>
-      Thanks for supporting my music 🖤
-    </p>
+      <h1>PUPII</h1>
 
-    <section class="donation">
-      <h2>$5</h2>
-      <p>A little support for my music ✨</p>
-      <button type="button" onclick="donate(5)">
-        Donate $5
-      </button>
+      <p class="subtitle">
+        indie rock made with love.<br>
+        sad feelings, loud guitars, good memories. 🖤
+      </p>
+
+      <span class="tag">INDEPENDENT ARTIST</span>
+    </header>
+
+    <nav aria-label="Main navigation">
+      <a href="#beat">Free Beat</a>
+      <a href="#about">About</a>
+      <a href="#socials">Find Me</a>
+    </nav>
+
+    <section id="beat">
+      <h2>🎧 Free Download</h2>
+
+      <p>
+        Here's my indie rock beat! Give it a listen,
+        download it for free, and enjoy. Thanks for
+        checking out my music.
+      </p>
+
+      <div class="beat-art" aria-label="Guitar artwork">
+        🎸
+      </div>
+
+      <h3 class="beat-title">Free Indie Rock Beat</h3>
+
+      <p class="beat-description">
+        By Pupii · WAV Audio · Free
+      </p>
+
+      <audio controls preload="metadata">
+        <source
+          src="free_indie_rock_beat.wav"
+          type="audio/wav"
+        >
+        Your browser does not support audio playback.
+        You can still try the download button below.
+      </audio>
+
+      <a
+        class="download-button"
+        href="free_indie_rock_beat.wav"
+        download="Pupii-Free-Indie-Rock-Beat.wav"
+      >
+        ⬇ Download Beat — FREE
+      </a>
+
+      <div class="free-label">
+        No payment. No sign-up. Just music. 💜
+      </div>
     </section>
 
-    <section class="donation">
-      <h2>$10</h2>
-      <p>Extra love for indie rock 💜</p>
-      <button type="button" onclick="donate(10)">
-        Donate $10
-      </button>
+    <section id="about">
+      <h2>🖤 About Pupii</h2>
+
+      <p>
+        Hey, I'm Pupii! I'm an independent artist making
+        indie rock with a mix of upbeat energy and sad
+        feelings. I'm here to make music, share ideas,
+        and see where this journey goes.
+      </p>
     </section>
 
-    <p class="note">
+    <section id="socials">
+      <h2>🌐 Find Me Online</h2>
+
+      <p>
+        Want to hear more? Find my music and follow my
+        journey online.
+      </p>
+
+      <div class="socials">
+        <!-- Replace these example links with your real profiles. -->
+        <a href="https://www.bandlab.com/" target="_blank"
+           rel="noopener noreferrer">BandLab</a>
+      </div>
+    </section>
+
+    <footer>
       Made with 🖤 by Pupii<br>
-      Independent music, supported by you.
-    </p>
+      Independent music, shared with love.
+    </footer>
+
   </main>
-
-  <script>
-    const KOFI_URL = "https://ko-fi.com/pupiimusicartist";
-
-    function donate(amount) {
-      // Opens your Ko-fi page in a new tab.
-      // The supporter completes the payment on Ko-fi.
-      window.open(
-        KOFI_URL,
-        "_blank",
-        "noopener,noreferrer"
-      );
-    }
-  </script>
 </body>
 </html>
